@@ -1,0 +1,107 @@
+{
+  "_from": "realm-web",
+  "_id": "realm-web@1.7.0",
+  "_inBundle": false,
+  "_integrity": "sha512-1I1E8GMCfKkRujHIbdr94uunJ+237Vog+tkuOHy3m/cqFewKWBp7cMbvrn73DjFRcoD9nVweiCLSni64+99TRQ==",
+  "_location": "/realm-web",
+  "_phantomChildren": {
+    "buffer": "5.7.1"
+  },
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "realm-web",
+    "name": "realm-web",
+    "escapedName": "realm-web",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/realm-web/-/realm-web-1.7.0.tgz",
+  "_shasum": "b214abdedd7b009ae46e254e880d25d0b036080c",
+  "_spec": "realm-web",
+  "_where": "/Users/dom/PhpstormProjects/dnamy/frontend/vue-dnamy-tenant",
+  "author": {
+    "name": "Realm",
+    "email": "help@realm.io",
+    "url": "https://realm.io"
+  },
+  "browser": {
+    "./dist/bundle.cjs.js": "./dist/bundle.dom.cjs.js",
+    "./dist/bundle.es.js": "./dist/bundle.dom.es.js"
+  },
+  "bugs": {
+    "url": "https://github.com/realm/realm-js/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@realm.io/common": "^0.1.1",
+    "abort-controller": "^3.0.0",
+    "bson": "^4.5.4",
+    "detect-browser": "^5.2.1",
+    "js-base64": "^3.7.2",
+    "node-fetch": "^2.6.0"
+  },
+  "deprecated": false,
+  "description": "Authenticate and communicate with the MongoDB Realm platform, from your web-browser",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^13.0.1",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "@rollup/plugin-replace": "^2.3.3",
+    "@rollup/plugin-typescript": "^4.1.1",
+    "@types/chai": "^4.2.9",
+    "@types/fs-extra": "^8.1.0",
+    "@types/js-base64": "^3.3.1",
+    "@types/mocha": "^7.0.1",
+    "@types/node": "^13.7.6",
+    "abort-controller": "^3.0.0",
+    "chai": "^4.2.0",
+    "fs-extra": "^10.0.0",
+    "mocha": "^5.2.0",
+    "node-fetch": "^2.6.0",
+    "realm-network-transport": "^0.7.1",
+    "rollup": "^2.6.1",
+    "rollup-plugin-dts": "^1.4.0",
+    "rollup-plugin-node-builtins": "^2.1.2"
+  },
+  "files": [
+    "dist",
+    "types/realm",
+    "LICENSE"
+  ],
+  "homepage": "https://github.com/realm/realm-js/tree/master/packages/realm-web#readme",
+  "keywords": [
+    "realm",
+    "browser"
+  ],
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "./dist/bundle.cjs.js",
+  "module": "./dist/bundle.es.js",
+  "name": "realm-web",
+  "optionalDependencies": {
+    "abort-controller": "^3.0.0",
+    "node-fetch": "^2.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/realm/realm-js.git",
+    "directory": "packages/realm-web"
+  },
+  "scripts": {
+    "build": "npm run generate-types && rollup --config",
+    "generate-types": "tsc --project src/dom/tsconfig.json --declaration --emitDeclarationOnly --declarationDir types/generated",
+    "lint": "eslint --ext .js,.ts .",
+    "postversion": "ts-node --project scripts/tsconfig.json scripts/postversion.ts",
+    "prepack": "npm run build",
+    "prepare": "npm run update-types",
+    "start": "npm run build -- --watch",
+    "test": "mocha 'src/tests/**/*.test.ts'",
+    "update-types": "ts-node --project scripts/tsconfig.json scripts/update-types.ts"
+  },
+  "types": "./dist/bundle.d.ts",
+  "version": "1.7.0"
+}

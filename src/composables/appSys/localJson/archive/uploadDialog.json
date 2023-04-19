@@ -1,0 +1,213 @@
+{
+  "description": "card4 dialog upload test",
+  "type": "dialog",
+  "key": "imagesCard22",
+  "toggleDialog": true,
+  "dialogKey": "imagesCard22",
+  "class": "relative inline-block align-bottom bg-white rounded-sm text-left shadow-xl transform transition-all sm:align-middle w-1/2 h-[70vH]",
+  "children": [
+    {
+      "description": "dialog card",
+      "type": "element",
+      "elementType": "uploadcareFileProvision",
+      "uploaderId": "uploadcare01",
+      "maxDownload": 10,
+      "key": "images.rack",
+      "uploaderResponseKey": "imageResponse",
+      "key2write": "",
+      "value2write": "",
+      "class": "relative bg-white h-full",
+      "children": [
+        {
+          "description": "drop zone overlay",
+          "type": "container",
+          "children": [
+            {
+              "type": "overlay",
+              "uploaderId": "uploadcare01",
+              "class": "absolute z-50 w-full h-full bg-white/[.9] overflow-hidden",
+              "children": [
+                {
+                  "type": "container",
+                  "class": "-z-10 flex justify-center items-center w-full h-full",
+                  "children": [
+                    {
+                      "type": "container",
+                      "class": "-z-10 w-64 h-64 justify-center items-center border-4 border-gray-300 rounded-xl",
+                      "children": [
+                        {
+                          "type": "container",
+                          "class": "-z-10 flex flex-col justify-center items-center w-full h-full",
+                          "children": [
+                            {
+                              "type": "element",
+                              "elementType": "staticHtmlTag",
+                              "tag": "div",
+                              "text": "backup",
+                              "class": "material-symbols-outlined text-[100px] text-gray-300"
+                            },
+                            {
+                              "type": "element",
+                              "elementType": "staticHtmlTag",
+                              "tag": "div",
+                              "text": "uploadcare",
+                              "class": "text-[18px] text-gray-400"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "description": "dialog card header",
+          "type": "container",
+          "class": "flex justify-between pl-6 pr-4 py-2 border-b h-10 text-left bg-cardHeaderBg",
+          "children": [
+            {
+              "description": "dialog card header title div",
+              "type": "container",
+              "class": "item w-full",
+              "children": [
+                {
+                  "description": "dialog card header title",
+                  "type": "element",
+                  "elementType": "staticHtmlTag",
+                  "tag": "div",
+                  "text": "UPLOAD test",
+                  "class": "text-sm leading-6 font-medium uppercase text-cardHeaderTitle"
+                }
+              ]
+            },
+            {
+              "description": "dialog card header close div",
+              "type": "container",
+              "class": "item w-7",
+              "children": [
+                {
+                  "description": "dialog card header close",
+                  "type": "element",
+                  "elementType": "staticHtmlTag",
+                  "tag": "div",
+                  "text": "close",
+                  "class": "material-symbols-outlined text-right h-7 w-7 rounded-full text-cardHeaderTitle border border-cardHeaderBg border-2 hover:border-white cursor-pointer",
+                  "toggleDialog": true,
+                  "dialogKey": "imagesCard22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "description": "headline",
+          "type": "element",
+          "elementType": "staticHtmlTag",
+          "tag": "div",
+          "text": "rack images",
+          "class": "text-13 w-full font-bold p-8"
+        },
+        {
+          "description": "loop array progress",
+          "type": "element",
+          "elementType": "loopArray",
+          "key": "images.rack",
+          "parentClass": "grid grid-cols-2 gap-4 px-8",
+          "children": [
+            {
+              "description": "loop container",
+              "type": "container",
+              "class": "w-full h-full border border-gray-400 bg-gray-100 rounded-xl ",
+              "children": [
+                {
+                  "description": "uploadcare progress",
+                  "type": "container",
+                  "class": "",
+                  "conditionArray": [
+                    {
+                      "cd": "INI, k, uploadcareProgress:images.rack[index], notEmpty"
+                    },
+                    {
+                      "cd": "AND, k, uploadcareProgress:images.rack[index], gte, s, 0"
+                    }
+                  ],
+                  "children": [
+                    {
+                      "type": "container",
+                      "class": "relative flex items-center justify-center mt-4",
+                      "children": [
+                        {
+                          "type": "element",
+                          "elementType": "staticHtmlTag",
+                          "tag": "div",
+                          "class": "bg-amber-400 h-2 ",
+                          "style": "ex:'width: ' + uploadcareProgress:images.rack[index] + 'vw'",
+                          "text": ""
+                        },
+                        {
+                          "type": "element",
+                          "elementType": "staticHtmlTag",
+                          "tag": "div",
+                          "class": "w-full h-full",
+                          "text": "ex:uploadcareProgress:images.rack[index] + '%'"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "description": "uploadCard content",
+                  "type": "container",
+                  "class": "flex justify-between",
+                  "children": [
+                    {
+                      "description": "image preview",
+                      "type": "element",
+                      "elementType": "staticHtmlTag",
+                      "tag": "img",
+                      "conditionArray": [
+                        {
+                          "cd": "INI, k, images.rack[index].imageResponse.cdnUrl, notEmpty"
+                        }
+                      ],
+                      "src": "ex:images.rack[index].imageResponse.cdnUrl + '/-/resize/400x/-/format/auto/-/quality/smart/'",
+                      "class": "w-1/3 rounded-xl ml-2"
+                    },
+                    {
+                      "description": "image delete",
+                      "type": "uploadEvent",
+                      "eventType": "delete",
+                      "criteria": "images.rack[index]",
+                      "uploaderResponseKey": "imageResponse",
+                      "elementType": "staticHtmlTag",
+                      "tag": "div",
+                      "conditionArray": [],
+                      "text": "delete",
+                      "class": "material-symbols-outlined font-medium text-gray-300 hover:text-gray-500 text-20 p-4 cursor-pointer",
+                      "progressIndicator": {
+                        "type": "container",
+                        "class": "flex justify-center",
+                        "children": [
+                          {
+                            "type": "element",
+                            "elementType": "staticHtmlTag",
+                            "tag": "span",
+                            "text": "",
+                            "class": "w-6 h-6 border-b-2 border-gray-600 rounded-full animate-spin"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

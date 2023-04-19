@@ -1,0 +1,60 @@
+[
+  {
+    "description": "vueSplide container - example 1",
+    "type": "container",
+    "class": "h-32 flex px-48 justify-between w-full mt-16",
+    "children": [
+      {
+        "type": "element",
+        "elementType": "vueSplide",
+        "options": {
+          "rewind": true,
+          "perPage": 1,
+          "gap": "1rem",
+          "height": "15rem"
+        },
+        "children": [
+          {
+            "type": "element",
+            "elementType": "staticHtmlTag",
+            "tag": "img",
+            "src": "https://source.unsplash.com/random/800x450?sig=6"
+          },
+          {
+            "type": "element",
+            "elementType": "staticHtmlTag",
+            "tag": "img",
+            "src": "https://source.unsplash.com/random/800x450?sig=7"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "description": "vueSplide container - example 2",
+    "type": "container",
+    "class": "h-32 flex px-48 justify-between w-full mt-16",
+    "children": [
+      {
+        "type": "element",
+        "elementType": "vueSplide",
+        "options": {
+          "rewind": true,
+          "perPage": 2,
+          "gap": "1rem",
+          "height": "15rem"
+        },
+        "loop": true,
+        "subDocument": "images.topView.file_part",
+        "children": [
+          {
+            "type": "element",
+            "elementType": "staticHtmlTag",
+            "tag": "img",
+            "src": "ex:images.topView.file_part[index].imageResponse.cdnUrl + '/-/resize/250x/-/format/auto/-/quality/smart/'"
+          }
+        ]
+      }
+    ]
+  }
+]

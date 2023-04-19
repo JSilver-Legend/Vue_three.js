@@ -1,0 +1,231 @@
+[
+  {
+    "description": "Tools - listbox example",
+    "type": "container",
+    "class": "h-full w-auto pl-2 pt-1.5 border-r border-gray-600",
+    "children": [
+      {
+        "description": "listbox select input",
+        "type": "annotatorEvent",
+        "eventType": "activateTool",
+        "key": "images",
+        "class": "h-full",
+        "elementType": "listboxSelectInput",
+        "value": "object",
+        "listbox": {
+          "listboxButton": {
+            "placeholder": "Tools",
+            "class": "relative flex items-center w-full h-full bg-transparent py-3 pl-4 pr-10 text-left text-white hover:text-amber-400 cursor-pointer",
+            "assignedKey": "material.substrate",
+            "children": [
+              {
+                "type": "container",
+                "children": [
+                  {
+                    "type": "element",
+                    "elementType": "staticHtmlTag",
+                    "tag": "span",
+                    "assignedKey": "name",
+                    "class": "block truncate sm:text-10"
+                  },
+                  {
+                    "type": "element",
+                    "elementType": "staticHtmlTag",
+                    "tag": "span",
+                    "text": "unfold_more",
+                    "class": "material-symbols-outlined text-[22px] font-normal pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
+                  }
+                ]
+              }
+            ]
+          },
+          "listboxOptionsContainer": {
+            "class": "absolute z-50 mt-0 max-h-60 w-full overflow-auto rounded-ibr border-l border-r border-b bg-white py-1 text-base  sm:text-sm",
+            "listboxOptions": {
+              "classActive": "bg-gray-300 text-black",
+              "classInactive": "text-gray-900",
+              "class": "relative cursor-default select-none py-1  pl-2 pr-4",
+              "children": [
+                {
+                  "type": "container",
+                  "children": [
+                    {
+                      "type": "element",
+                      "elementType": "staticHtmlTag",
+                      "tag": "span",
+                      "assignedKey": "name",
+                      "classActive": "font-medium",
+                      "classInactive": "font-normal",
+                      "class": "block truncate"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "options": [
+          {
+            "children": [
+              {
+                "name": "rectangle",
+                "value": "rectangleTool",
+                "fillColor": "#0000ff01",
+                "opacity": 1,
+                "strokeColor": "#ff0000",
+                "strokeWidth": 4
+              },
+              {
+                "name": "circle",
+                "value": "circleTool",
+                "fillColor": "#0000ff01",
+                "opacity": 1,
+                "strokeColor": "#ff0000",
+                "strokeWidth": 8
+              },
+              {
+                "name": "dotCircle",
+                "value": "dotCircleTool",
+                "fillColor": "#0000ff01",
+                "opacity": 1,
+                "radius": 80,
+                "strokeColor": "#ff0000",
+                "strokeWidth": 4,
+                "dashArrayStroke": 20,
+                "dashArrayGap": 20,
+                "content": "Lasertool",
+                "resize": false
+              },
+              {
+                "name": "dotCircle",
+                "value": "dotCircleTool",
+                "fillColor": "#0000ff01",
+                "opacity": 1,
+                "radius": 50,
+                "strokeColor": "#11ff23",
+                "strokeWidth": 4,
+                "dashArrayStroke": 20,
+                "dashArrayGap": 20,
+                "content": "Holder",
+                "resize": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "description": "Tools - dropdown button example",
+    "type": "navEvent",
+    "eventType": "dropdownPanelTrigger",
+    "target": "toolsAnnotationTrigger",
+    "key": "toolsAnnotationTrigger",
+    "containerType": "a",
+    "class": "w-[60px] flex flex-col justify-center items-center cursor-pointer border-r border-l border-gray-500 mt-1.5",
+    "children": [
+      {
+        "type": "element",
+        "elementType": "staticHtmlTag",
+        "text": "format_color_fill",
+        "class": "material-symbols-outlined text-[19px] text-white"
+      },
+      {
+        "type": "element",
+        "elementType": "staticHtmlTag",
+        "tag": "div",
+        "text": "Tools",
+        "class": "text-10 m-0.5 text-white text-center"
+      }
+    ]
+  },
+  {
+    "description": "Tools - dropdown panel example",
+    "type": "container",
+    "containerType": "div",
+    "class": "relative inline-block text-left",
+    "children": [
+      {
+        "type": "dropdownPanel",
+        "key": "toolsAnnotationTrigger",
+        "id": "toolsAnnotationTrigger",
+        "tag": "div",
+        "class": "origin-top-left absolute -left-[70px] mt-[49px] w-20 rounded-sm shadow bg-[#4e5962] ring-1 ring-black ring-opacity-5 focus:outline-none",
+        "children": [
+          {
+            "description": "panel container menu items",
+            "type": "container",
+            "containerType": "div",
+            "class": "py-1",
+            "children": [
+              {
+                "description": "menu item 1",
+                "type": "annotatorEvent",
+                "eventType": "activateTool",
+                "key": "images",
+                "value": {
+                  "name": "rectangle",
+                  "value": "rectangleTool",
+                  "fillColor": "#0000ff01",
+                  "opacity": 1,
+                  "strokeColor": "#ff0000",
+                  "strokeWidth": 4
+                },
+                "containerType": "div",
+                "class": "flex justify-start items-center hover:bg-amber-300 text-black cursor-pointer border-b border-grey-500",
+                "children": [
+                  {
+                    "type": "element",
+                    "elementType": "staticHtmlTag",
+                    "tag": "div",
+                    "text": "format_color_fill",
+                    "class": "material-symbols-outlined text-[18px] text-white pl-2"
+                  },
+                  {
+                    "type": "element",
+                    "elementType": "staticHtmlTag",
+                    "tag": "div",
+                    "text": "Rect",
+                    "class": "block pl-2 py-2 text-12 text-white"
+                  }
+                ]
+              },
+              {
+                "description": "menu item 2",
+                "type": "annotatorEvent",
+                "eventType": "activateTool",
+                "key": "images",
+                "value": {
+                  "name": "circle",
+                  "value": "circleTool",
+                  "fillColor": "#0000ff01",
+                  "opacity": 1,
+                  "strokeColor": "#ff0000",
+                  "strokeWidth": 8
+                },
+                "containerType": "div",
+                "class": "flex justify-start items-center hover:bg-amber-300 text-black cursor-pointer border-b border-grey-500",
+                "children": [
+                  {
+                    "type": "element",
+                    "elementType": "staticHtmlTag",
+                    "tag": "div",
+                    "text": "format_color_fill",
+                    "class": "material-symbols-outlined text-[18px] text-white pl-2"
+                  },
+                  {
+                    "type": "element",
+                    "elementType": "staticHtmlTag",
+                    "tag": "div",
+                    "text": "Circ",
+                    "class": "block pl-2 py-2 text-12 text-white"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

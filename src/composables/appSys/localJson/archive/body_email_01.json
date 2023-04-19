@@ -1,0 +1,24 @@
+{
+  "platformId": "pf41149857-dev-dxp",
+  "template": "source4_formatted",
+  "email": "dnamyone@utom.de",
+
+  "subject": "HILLEBRAND COATING Beschichtungsprojekt VA-202208-003",
+  "templateData": {
+    "logo": "https://d1j6k5hgdhjmov.cloudfront.net/system/logo/dxp_logo_02.png",
+    "bgHeader":"#3f3131",
+    "width":"220",
+    "bodytext":"Sehr geehrter Herr Stahlschmidt,<br><br>auf der für Sie zusammengestellten Webseite informieren wir über das angewendete Beschichtungssystem, über unsere Applikationstechnologien und generelle Informationen zu ihren applizierten Verfahren.<br><br>Ich freue mich auf einen weiteren Austausch mit Ihnen und auf ihr Feedback.<br><br>herzliche Grüße,",
+    "sigName": "Dominik Stahlschmidt",
+    "sigEdu": "Bachelor of Arts",
+    "sigPositionDE": "Marketing/Innovation",
+    "sigPositionEN": "marketing/innovation",
+    "sigStreet": "Alt-Stralau 52",
+    "sigTown": "10245 berlin",
+    "sigMobile": "+4915114966080",
+    "sigEmail": "dom@utom.de"
+  }
+}
+
+// URL oder SDK befehl
+

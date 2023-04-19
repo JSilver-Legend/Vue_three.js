@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  html {
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
+.colorTheme-light-default {
+  --color-primary: #eb5424;
+  --color-hoverPrimary: #e7704a;
+  --color-sidebar: #232229;
+  --color-mainWrapper: #ffffff;
+  --color-contentHeader: #eeeeee;
+  --color-cardTitle: #6d7781;
+  --color-cellOrange: orange;
+}
+
+.formTheme-default {
+  /* tabs */
+  --tab-base: #498da4;
+  --tab-active: #eb5424;
+  --tab-hover: #e76a42;
+
+  /* forms */
+  --input-py: 4px;
+  --border-radius: 0rem;
+  --icon-size: 14px;
+  --select-height: 32px;
+}
+
+.colorTheme-light-yellow {
+  --color-primary: #eb5424;
+  --color-sidebar: #232229;
+  --color-mainWrapper: #f8f8f9;
+  --color-contentHeader: #eeeeee;
+  --color-cardTitle: #6d7781;
+  --color-cellOrange: orange;
+}
+
+.formTheme-yellow {
+  /* tabs */
+  --tab-base: #498da4;
+  --tab-active: #eb5424;
+  --tab-hover: #e76a42;
+
+  /* forms */
+  --input-py: 12px;
+  --border-radius: 2rem;
+  --icon-size: 18px;
+  --select-height: 56px;
+}

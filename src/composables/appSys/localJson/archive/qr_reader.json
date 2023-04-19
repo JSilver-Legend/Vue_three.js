@@ -1,0 +1,20 @@
+// It's an example use qrReader as event
+// qrReader will return the scanned object or value to the event
+// there we could do anything
+{
+  "description": "qr reader camera",
+  "type": "cddpEvent", // or any new event
+  "eventType": "documentExists",
+  "elementType": "qrReader",
+  "store":"qrReaderObject01", // <- Seems not needed
+  "functionId": "scanDocumentCheck", // <-- Seems not needed too
+  "class": "w-96 h-1/2 m-8"
+},
+// This is example of if we want to save scanned object to a database key
+{
+"description": "qr reader camera",
+"type": "element",
+"elementType": "qrReader",
+"key":"qrReaderObject01",
+"class": "w-1/2 h-1/2 m-8"
+}

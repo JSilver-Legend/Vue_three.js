@@ -1,0 +1,6 @@
+{
+    "appTemplateLocal": true,
+    "platformNavigationLocal": true,
+    "authScreensLocal": true,
+    "authVerfication": "userToken"
+}
